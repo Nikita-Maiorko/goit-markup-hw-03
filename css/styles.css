@@ -202,7 +202,7 @@ button {
   padding-bottom: 120px;
 }
 .item-bnf {
-  width: ((100% -72px) / 4);
+  width: calc((100% -72px) / 4);
 }
 
 .title-bnf {
@@ -297,6 +297,7 @@ button {
   padding: 32px 16px;
   text-align: left;
   border: 1px solid #e7e9fc;
+  border-top: none;
 }
 .title-portf {
   font-weight: 700;
