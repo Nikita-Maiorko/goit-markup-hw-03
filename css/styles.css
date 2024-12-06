@@ -4,23 +4,26 @@ body {
   background-color: #fff;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 ul,
 ol {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-}
-button {
-  cursor: pointer;
-}
-.container {
-  max-width: 1158px;
-  padding: 0 15px;
-  margin: 0 auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-inline-start: 0;
 }
 h1,
 h2,
@@ -29,14 +32,40 @@ h4,
 h5,
 h6,
 p {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+a {
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+}
+.container {
+  width: 1158px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 /* #region header */
-.page-heder {
+.page-heder . {
   border-bottom: 1px solid #e7e9fc;
 }
 
-.heder-container {
+.heder-cont {
   display: flex;
   align-items: center;
 }
@@ -103,7 +132,7 @@ p {
 
 .contacts-link {
   display: block;
-  padding: 24px o;
+  padding: 24px 0;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -117,7 +146,13 @@ p {
 
 /* #endregion header */
 /* #region hero */
+.hero-container {
+  padding-top: 188px;
+  padding-bottom: 188px;
+}
 
+.container-hero-bth {
+}
 .hero {
   background: #2e2f42;
 }
@@ -128,7 +163,12 @@ p {
   letter-spacing: 0.02em;
   text-align: center;
   color: #fff;
+  width: 496px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 48px;
 }
+
 .hero-bth {
   font-family: inherit;
   font-weight: 500;
@@ -137,6 +177,15 @@ p {
   letter-spacing: 0.04em;
   color: #fff;
   background-color: #4d5ae5;
+  text-align: center;
+  border: none;
+  display: block;
+  border-radius: 4px;
+  padding: 16px 32px;
+  min-width: 169px;
+  height: 56px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .hero-bth:hover,
@@ -148,10 +197,18 @@ p {
 
 /* #region Our Benefits */
 .benefits {
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
 .item-bnf {
+  width: ((100% -72px) / 4);
 }
+
 .title-bnf {
+}
+.bnf-list {
+  display: flex;
+  gap: 24px;
 }
 .title-bnf-list {
   font-weight: 500;
@@ -159,6 +216,7 @@ p {
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: #2e2f42;
+  margin-bottom: 8px;
 }
 .text-bnf {
   font-weight: 400;
@@ -173,7 +231,22 @@ p {
 .team {
   background-color: #f4f4fd;
 }
+.team-cont {
+}
+.cont-team-title {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
 .item-team {
+  list-style-type: none;
+  display: flex;
+  gap: 24px;
+  width: calc((100%-72px) / 4);
+}
+.item-team-cnt {
+  border-radius: 0 0 4px 4px;
   background-color: #fff;
 }
 .title-team {
@@ -184,6 +257,7 @@ p {
   text-align: center;
   text-transform: capitalize;
   color: #2e2f42;
+  margin-bottom: 72px;
 }
 .img-team {
 }
@@ -195,6 +269,7 @@ p {
   letter-spacing: 0.02em;
   text-align: center;
   color: #2e2f42;
+  margin-bottom: 8px;
 }
 .text-team {
   font-weight: 400;
@@ -209,6 +284,22 @@ p {
 /* #region  Our Portfolio */
 .portfolio {
 }
+.list-portf {
+  border-bottom: 1px solid #e7e9fc;
+  border-left: 1px solid #e7e9fc;
+  border-right: 1px solid #e7e9fc;
+  overflow: hidden;
+  width: calc((100% - 48px) / 3);
+}
+.item-poetf {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 24px;
+}
+.cont-portf {
+  padding: 32px 16px;
+  text-align: left;
+}
 .title-portf {
   font-weight: 700;
   font-size: 36px;
@@ -217,6 +308,7 @@ p {
   text-transform: capitalize;
   text-align: center;
   color: #2e2f42;
+  margin-bottom: 72px;
 }
 .img-portf {
 }
@@ -240,15 +332,26 @@ p {
 .footer {
   background: #2e2f42;
 }
+.footer-cont {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
 .footer .logo .logo-part {
   color: #f4f4fd;
 }
+.logo-footer {
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
 .text-footer {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #f4f4fd;
+  max-width: 264px;
+  margin-bottom: 8px;
 }
 
 /* #endregion footer */
